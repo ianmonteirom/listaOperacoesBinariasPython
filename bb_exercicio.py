@@ -10,7 +10,7 @@ corrigindo os valores das variaveis
 
 1) Qual o indice do 20?
 '''
-indice_20='1'
+indice_20=1
 
 '''
 2) Qual o indice do 400?
@@ -244,7 +244,7 @@ Procurei no meio e achei o número 300.
 
 Coloque os 3 números na proxima variável, como no exemplo acima
 '''
-busca1=1,(1,1)
+busca1=20,(10,19)
 '''
 EXERCICIO
 Digamos que eu estou procurando o número 200.
@@ -254,7 +254,7 @@ Procurei no meio e achei o número 100.
 
 Coloque os 3 números na proxima variável, como no exemplo
 '''
-busca2=1,(1,1)
+busca2=23,(24,26)
 '''
 EXERCICIO
 Digamos que eu estou procurando o número 200.
@@ -264,7 +264,7 @@ Procurei no meio e achei o número 12.
 
 Coloque os 3 números na proxima variável, como no exemplo
 '''
-busca3=1,(1,1)
+busca3=25,(26,35)
 
 
 '''
@@ -292,8 +292,19 @@ dica: return comeco,final #so deixei isso aqui pra voce lembrar como retornar 2 
 
 '''
 
-def passo_da_busca_binaria(lista,procurando,menor_i,maior_i):
-    return comeco,final #so deixei isso aqui pra voce lembrar como retornar 2 numeros
+def passo_da_busca_binaria(lista,numero_a_procurar,indice_menor,indice_maior):
+
+    indice_meio = (indice_maior + indice_menor) // 2
+
+    # if numero_a_procurar == lista[indice_meio]:
+    #     return indice_meio
+    if numero_a_procurar > lista[indice_meio]:
+        indice_menor = indice_meio + 1
+    if numero_a_procurar < lista[indice_meio]:
+        indice_maior = indice_meio - 1
+
+
+    return indice_menor,indice_maior #so deixei isso aqui pra voce lembrar como retornar 2 numeros
 
 '''
 EXPLICACAO
